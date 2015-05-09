@@ -1,0 +1,38 @@
+﻿<Page
+    x:Class="SlidePlayer.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:SlidePlayer"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+    <Page.BottomAppBar>
+        <AppBar IsOpen="True" IsSticky="True">
+            <StackPanel Orientation="Horizontal">
+                <AppBarButton Icon="Add" Label="Add" Click="Add_Click"/>
+                <AppBarButton Icon="Remove" Label="Remove" Click="Remove_Click"/>
+                <AppBarButton Name="Play" Icon="Play" Label="Play" Click="Play_Click"/>
+                <AppBarButton Icon="Stop" Label="Stop" Click="Stop_Click"/>
+            </StackPanel>
+        </AppBar>
+    </Page.BottomAppBar>
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <TextBox Grid.Row="0" Margin="20" Name="Value" KeyDown="Go_KeyDown" Text="http://dummyimage.com/300x200&amp;text=Hello+World"/>
+            <Grid Grid.Row="1" Margin="5">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="120"/>
+                </Grid.ColumnDefinitions>
+                <Slider Grid.Column="0" Padding="5" Minimum="0" Name="Position" ValueChanged="Position_ValueChanged"/>
+                <Slider Grid.Column="2" Padding="5" Minimum="100" Maximum="5000" Value="4000" Name="Speed" ValueChanged="Speed_ValueChanged"/>
+            </Grid>
+            <Image Grid.Row="2" Margin="75" Name="Display"/>
+        </Grid>
+    </Grid>
+</Page>

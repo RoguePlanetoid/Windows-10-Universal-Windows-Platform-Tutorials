@@ -1,0 +1,36 @@
+﻿<Page
+    x:Class="MediaPlayer.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:MediaPlayer"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+    <Page.BottomAppBar>
+        <AppBar IsOpen="True" IsSticky="True">
+            <StackPanel Orientation="Horizontal">
+                <AppBarButton Name="Play" Icon="Play" Label="Play" Click="Play_Click"/>
+                <AppBarButton Icon="Stop" Label="Stop" Click="Stop_Click"/>
+            </StackPanel>
+        </AppBar>
+    </Page.BottomAppBar>
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <TextBox Grid.Row="0" Margin="20" Name="Value" InputScope="Url" KeyDown="Go_KeyDown"/>
+            <Grid Grid.Row="1" Margin="5">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="120"/>
+                </Grid.ColumnDefinitions>
+                <Slider Grid.Column="0" Padding="5" Minimum="0" Name="Position"/>
+                <Slider Grid.Column="2" Padding="5" Minimum="0" Maximum="1" Value="0.5" Name="Volume" ValueChanged="Volume_ValueChanged"/>
+            </Grid>
+            <MediaElement Grid.Row="2" Name="Display" AutoPlay="True" MediaOpened="Display_MediaOpened" MediaEnded="Display_MediaEnded" CurrentStateChanged="Display_CurrentStateChanged"/>
+        </Grid>
+    </Grid>
+</Page>

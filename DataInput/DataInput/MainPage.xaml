@@ -1,0 +1,25 @@
+﻿<Page
+    x:Class="DataInput.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:DataInput"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+    <Page.BottomAppBar>
+        <AppBar IsOpen="True" IsSticky="True">
+            <StackPanel Orientation="Horizontal">
+                <AppBarButton Name="New" Icon="Page" Label="New" Click="New_Click"/>
+                <AppBarButton Name="Open" Icon="Folder" Label="Open" Click="Open_Click"/>
+                <AppBarButton Name="Save" Icon="Save" Label="Save" Click="Save_Click"/>
+            </StackPanel>
+        </AppBar>
+    </Page.BottomAppBar>
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <StackPanel>
+            <TextBox Name="Email" PlaceholderText="Email" InputScope="EmailSmtpAddress" Margin="20"/>
+            <TextBox Name="Website" PlaceholderText="Website" InputScope="Url" Margin="20"/>
+            <TextBox Name="Telephone" PlaceholderText="Telephone" InputScope="TelephoneNumber" Margin="20"/>
+        </StackPanel>
+    </Grid>
+</Page>

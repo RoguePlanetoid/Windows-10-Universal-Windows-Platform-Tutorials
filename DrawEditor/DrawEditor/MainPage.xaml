@@ -1,0 +1,75 @@
+﻿<Page
+    x:Class="DrawEditor.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:DrawEditor"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+    <Page.BottomAppBar>
+        <AppBar IsOpen="True" IsSticky="True">
+            <StackPanel Orientation="Horizontal">
+                <AppBarButton Name="New" Icon="Page" Label="New" Click="New_Click"/>
+                <AppBarButton Name="Open" Icon="Folder" Label="Open" Click="Open_Click"/>
+                <AppBarButton Name="Save" Icon="Save" Label="Save" Click="Save_Click"/>
+            </StackPanel>
+        </AppBar>
+    </Page.BottomAppBar>
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <StackPanel Grid.Row="0" Orientation="Horizontal">
+                <ComboBox Name="Size" VerticalAlignment="Center" Margin="20" SelectionChanged="Size_SelectionChanged">
+                    <ComboBoxItem Content="2" Tag="2"/>
+                    <ComboBoxItem Content="4" Tag="4"/>
+                    <ComboBoxItem Content="8" Tag="8"/>
+                    <ComboBoxItem Content="10" Tag="10" IsSelected="True"/>
+                    <ComboBoxItem Content="16" Tag="16"/>
+                    <ComboBoxItem Content="20" Tag="20"/>
+                    <ComboBoxItem Content="24" Tag="24"/>
+                    <ComboBoxItem Content="32" Tag="32"/>
+                    <ComboBoxItem Content="48" Tag="48"/>
+                    <ComboBoxItem Content="64" Tag="64"/>
+                </ComboBox>
+                <ComboBox Name="Colour" VerticalAlignment="Center" Margin="20" SelectionChanged="Colour_SelectionChanged">
+                    <ComboBoxItem Tag="FF000000" IsSelected="True">
+                        <Rectangle Width="25" Height="14" Fill="Black"/>
+                    </ComboBoxItem>
+                    <ComboBoxItem Tag="FF808080">
+                        <Rectangle Width="25" Height="14" Fill="Gray"/>
+                    </ComboBoxItem>
+                    <ComboBoxItem Tag="FFFF0000">
+                        <Rectangle Width="25" Height="14" Fill="Red"/>
+                    </ComboBoxItem>
+                    <ComboBoxItem Tag="FFFFA500">
+                        <Rectangle Width="25" Height="14" Fill="Orange"/>
+                    </ComboBoxItem>
+                    <ComboBoxItem Tag="FFFFFF00">
+                        <Rectangle Width="25" Height="14" Fill="Yellow"/>
+                    </ComboBoxItem>
+                    <ComboBoxItem Tag="FF008000">
+                        <Rectangle Width="25" Height="14" Fill="Green"/>
+                    </ComboBoxItem>
+                    <ComboBoxItem Tag="FF00FFFF">
+                        <Rectangle Width="25" Height="14" Fill="Cyan"/>
+                    </ComboBoxItem>
+                    <ComboBoxItem Tag="FF0000FF">
+                        <Rectangle Width="25" Height="14" Fill="Blue"/>
+                    </ComboBoxItem>
+                    <ComboBoxItem Tag="FFFF00FF">
+                        <Rectangle Width="25" Height="14" Fill="Magenta"/>
+                    </ComboBoxItem>
+                    <ComboBoxItem Tag="FF800080">
+                        <Rectangle Width="25" Height="14" Fill="Purple"/>
+                    </ComboBoxItem>
+                </ComboBox>
+            </StackPanel>
+            <Grid Grid.Row="1" Background="White">
+                <InkCanvas Name="Display"/>
+            </Grid>         
+        </Grid>
+    </Grid>
+</Page>
