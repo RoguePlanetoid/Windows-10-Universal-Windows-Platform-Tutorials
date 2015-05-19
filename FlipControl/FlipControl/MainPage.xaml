@@ -1,0 +1,34 @@
+﻿<Page
+    x:Class="FlipControl.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:FlipControl"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid Width="300" Height="300">
+            <local:FlipPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                <local:FlipPanel.FrontContent>
+                    <StackPanel>
+                        <TextBlock Margin="4" FontWeight="Bold" Text="Front Content" FontSize="16"/>
+                        <Button Margin="4" Padding="4" Content="Button One"/>
+                        <Button Margin="4" Padding="4" Content="Button Two"/>
+                        <Button Margin="4" Padding="4" Content="Button Three"/>
+                        <Button Margin="4" Padding="4" Content="Button Four"/>
+                    </StackPanel>
+                </local:FlipPanel.FrontContent>
+                <local:FlipPanel.BackContent>
+                    <StackPanel>
+                        <TextBlock Margin="4" FontWeight="Bold" Text="Back Content" FontSize="16"/>
+                        <CheckBox Margin="4" Padding="4" Content="CheckBox One"/>
+                        <CheckBox Margin="4" Padding="4" Content="CheckBox Two"/>
+                        <CheckBox Margin="4" Padding="4" Content="CheckBox Three"/>
+                        <CheckBox Margin="4" Padding="4" Content="CheckBox Four"/>
+                    </StackPanel>
+                </local:FlipPanel.BackContent>
+            </local:FlipPanel>
+        </Grid>
+    </Grid>
+</Page>

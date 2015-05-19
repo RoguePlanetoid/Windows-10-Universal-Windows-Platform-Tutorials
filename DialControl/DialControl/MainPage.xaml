@@ -1,0 +1,20 @@
+﻿<Page
+    x:Class="DialControl.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:DialControl"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <local:Dial x:Name="Dial" Height="300" Width="300" Minimum="90.0" Maximum="270.0">
+            <local:Dial.Knob>
+                <Grid>
+                    <Ellipse Fill="{ThemeResource ApplicationSecondaryForegroundThemeBrush}"/>
+                    <Rectangle Height="40" Width="150" Margin="0,0,150,0" RadiusX="20" RadiusY="20" Fill="{ThemeResource ApplicationForegroundThemeBrush}"/>
+                </Grid>
+            </local:Dial.Knob>
+        </local:Dial>
+    </Grid>
+</Page>
